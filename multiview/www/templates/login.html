@@ -1,21 +1,23 @@
 <ion-modal-view>
     <ion-header-bar>
-        <h1 class="title">Login</h1>
+        <h1 class="title">Login with facebook</h1>
         <div class="buttons">
             <button class="button button-clear" ng-click="closeLogin()">Close</button>
         </div>
     </ion-header-bar>
     <<ion-content>
-
-        <div ng-if="!isAuthenticated()">
-            <label style="color:red" class="item item-input">You are NOT Logged In!</label>
+        <div class="card row row-top">
+            <div ng-if="!isAuthenticated()">
+                <label style="color:red" class="item item-text-wrap item-input">You are NOT Logged In!</label>
+            </div>
+            <div ng-if="isAuthenticated()">
+                <label style="color:green" class="item item-text-wrap item-input">You are Logged In!</label>
+            </div>
         </div>
-        <div ng-if="isAuthenticated()">
-            <label style="color:green" class="item item-input">You are Logged In!</label>
+        <div class="row row-bottom">
+            <button class="button button-full button-balanced" ng-if="!isAuthenticated()" ng-click="authenticate('facebook')">Login in with Facebook</button>
+            <button class="button button-full button-assertive" ng-if="isAuthenticated()" ng-click="logout()">Log Out</button>
         </div>
         </ion-content>
-        <ion-footer-bar>
-            <button class="button" ng-if="!isAuthenticated()" ng-click="authenticate('facebook')">Login in with Facebook</button>
-            <button class="button" ng-if="isAuthenticated()" ng-click="logout()">Log Out</button>
-        </ion-footer-bar>
+
 </ion-modal-view>
