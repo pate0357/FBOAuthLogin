@@ -14,7 +14,7 @@
                 <label style="color:green" class="item item-text-wrap item-input">You are Logged In!</label>
             </div>
         </div>
-        <div class="row row-bottom">
+        <div>
             <button class="button button-full button-balanced" ng-if="!isAuthenticated()" ng-click="authenticate('facebook')">Login in with Facebook</button>
             <button class="button button-full button-assertive" ng-if="isAuthenticated()" ng-click="logout()">Log Out</button>
         </div>
